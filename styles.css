@@ -522,3 +522,33 @@ body {
   border-color:#c00000;
   background:#fff1f1;
 }
+/* ================= SABORES GRID ================= */
+
+.gustos{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.gustos img{
+  width: 100%;
+  height: 90px;
+  object-fit: contain;
+  background: white;
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px){
+  .gustos{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gustos img{
+    height: 80px;
+  }
+}
