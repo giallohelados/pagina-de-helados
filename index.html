@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos de Helados</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="header">
+  <div class="logo-info">
+    <img src="logo/logo.png" alt="Logo" class="logo">
+
+    <div class="info-local">
+      <p>📍Lucila del Mar</p>
+      <p> 📍San Bernardo</p>
+      <p>📍Mar de Ajo</p>
+      <p>📞 11 1234 5678</p>
+      <p class="delivery">🚚 Delivery sin cargo</p>
+    </div>
+  </div>
+</header>
+
+  <h1 class="titulo">🍨 Tamaño</h1>
+
+  <!-- ================= PRODUCTOS ================= -->
+<section class="productos">
+
+  <!-- ====== CUARTO ====== -->
+  <div class="producto" data-tamano="cuarto">
+    <div class="icono-tamano"></div>
+
+    <!-- RADIO OCULTO -->
+    <input type="radio" name="tamano" id="tam-cuarto" value="cuarto">
+
+    <!-- IMAGEN COMO BOTON -->
+    <label for="tam-cuarto" class="btn-tamano-img">
+      <img src="tamanos/cuarto.png" alt="cuarto">
+    </label>
+
+    <input type="number" id="q-1/4" class="cantidad" min="0" value="0">
+
+    <div class="pagos">
+      <label>
+        <input type="radio" name="pago-cuarto" value="efectivo" checked>
+        💵 Oferta Efectivo $6000
+      </label>
+
+      <label>
+        <input type="radio" name="pago-cuarto" value="transferencia">
+        💳 Transferencia $7500
+      </label>
+    </div>
+  </div>
+
+  <!-- ====== MEDIO ====== -->
+  <div class="producto" data-tamano="medio">
+    <div class="icono-tamano"></div>
+
+    <input type="radio" name="tamano" id="tam-medio" value="medio">
+
+    <label for="tam-medio" class="btn-tamano-img">
+      <img src="tamanos/cuarto.png" alt="medio">
+    </label>
+
+    <input type="number" id="q-1/2" class="cantidad" min="0" value="0">
+
+    <div class="pagos">
+      <label>
+        <input type="radio" name="pago-medio" value="efectivo" checked>
+        💵 Oferta Efectivo $12000
+      </label>
+
+      <label>
+        <input type="radio" name="pago-medio" value="transferencia">
+        💳 Transferencia $15000
+      </label>
+    </div>
+  </div>
+
+  <!-- ====== KILO ====== -->
+  <div class="producto" data-tamano="kilo">
+    <div class="icono-tamano"></div>
+
+    <input type="radio" name="tamano" id="tam-kilo" value="kilo">
+
+    <label for="tam-kilo" class="btn-tamano-img">
+      <img src="tamanos/kilo.png" alt="kilo">
+    </label>
+
+    <input type="number" id="q-kilo" class="cantidad" min="0" value="0">
+
+    <div class="pagos">
+      <label>
+        <input type="radio" name="pago-kilo" value="efectivo" checked>
+        💵 Oferta Efectivo $22000
+      </label>
+
+      <label>
+        <input type="radio" name="pago-kilo" value="transferencia">
+        💳 Transferencia $25000
+      </label>
+    </div>
+  </div>
+
+</section>
+
+  <button id="btn-calcular" onclick="armarPedido()">Armar pedido</button>
+
+  
+ <!-- ================= SABORES ================= -->
+
+<!-- EJEMPLO: TODOS LOS CHECKBOX TIENEN class="sabor" -->
+<div class="bloque">
+ <h3>Sabores Gourmet</h3> 
+<div class="Gustos"> <label>
+<input type="checkbox" value="Alfajores Esturion">
+<img src="sabores-gourmet/alfajores esturion.png" alt="Alfajores Esturion">
+<span></span>
+</label> 
+<label><input type="checkbox" class="sabor" value="Baileys"> 
+  <img src="sabores-gourmet/baileys.png" alt="Baileys">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Bananita Dolca">
+  <img src="sabores-gourmet/bananita dolca.png" alt="Bananita Dolca">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Blue Demon">
+  <img src="sabores-gourmet/blue demon.png" alt="Blue Demon">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Bob Esponja">
+  <img src="sabores-gourmet/bob esponja.png" alt="Bob Esponja">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Cadbury Yoghurt Frutilla">
+  <img src="sabores-gourmet/cadbury frutilla.png" alt="Cadbury Yoghurt Frutilla">
+  <span></span>
+</label> 
+<label><input type="checkbox"class="sabor" value="Chessecake con Frutos Rojos">
+  <img src="sabores-gourmet/chessecake frutos rojos.png" alt="Chessecake con Frutos Rojos">
+  <span></span>
+</label>
+  
+<label><input type="checkbox"class="sabor" value="Cocada">
+  <img src="sabores-gourmet/cocada.png" alt="Cocada">
+  <span></span>
+  
+</label>
+<label><input type="checkbox"class="sabor" value="Cosecha Tardía">
+  <img src="sabores-gourmet/cosecha tardia.png" alt="Cosecha Tardia">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Fernet Cola">
+  <img src="sabores-gourmet/fernet cola.png" alt="Fernet Cola">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Flynn Paff">
+  <img src="sabores-gourmet/flynn paff.png" alt="Flynn Paff">
+  <span></span>
+</label> 
+<label><input type="checkbox"class="sabor" value="Gin Tonic">
+  <img src="sabores-gourmet/gin tonic.png" alt="Gin Tonic">
+  <span></span>
+</label> 
+<label><input type="checkbox"class="sabor" value="Lemon Pie">
+  <img src="sabores-gourmet/lemon pie.png" alt="Lemon Pie">
+  <span></span>
+</label> 
+<label><input type="checkbox"class="sabor" value="Limón al Gancia">
+  <img src="sabores-gourmet/limon al gancia.png" alt="Limon al Gancia">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Malbec con Frutos Rojos">
+  <img src="sabores-gourmet/malbec.png" alt="Malbec con Frutos Rojos">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor"value="Mantecol Mix">
+  <img src="sabores-gourmet/mantecol mix.png" alt="Mantecol Mix">
+  <span></span>
+</label> 
+<label><input type="checkbox"class="sabor"value="Mascarpone con Frutos Rojos">
+  <img src="sabores-gourmet/mascarpone frutos rojos.png" alt="Mascarpone con Frutos Rojos">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Melón + Smirnoff">
+  <img src="sabores-gourmet/melon+smirnoff.png" alt="Melon + Smirnoff">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Palitos de la Selva">
+  <img src="sabores-gourmet/palito de la selva.png" alt="Palitos de la Selva">
+  <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Yerba Mate">
+  <img src="sabores-gourmet/yerba mate.png" alt="Yerba Mate">
+  <span></span>
+
+</label>
+</div>
+</div> 
+<div class="bloque">
+<h3>Zero Azúcar</h3>
+<div class="Gustos">
+ <label><input type="checkbox" value="Americana Zero">
+  <img src="zero-azucar/americana zero.png" alt="Americana Zero">
+   <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Chocolate Zero">
+  <img src="zero-azucar/chocolate zero.png" alt="Chocolate Zero">
+   <span></span>
+</label> 
+<label><input type="checkbox"class="sabor" value="Frutilla Zero">
+  <img src="zero-azucar/frutilla zero.png" alt="Frutilla Zero">
+   <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Limón Zero">
+  <img src="zero-azucar/limon zero.png" alt="Limon Zero">
+   <span></span>
+</label> 
+<label><input type="checkbox"class="sabor" value="Naranja Zero">
+  <img src="zero-azucar/naranja zero.png" alt="Naranja Zero">
+   <span></span>
+</label> 
+</div> 
+</div> 
+<div class="bloque">
+ <h3>Sabores de Dulce de Leche</h3> 
+<div class="Gustos"> <label>
+<input type="checkbox"class="sabor" value="Banana y Coco">
+  <img src="sabores-ddl/banana y coco.png" alt="Banana y Coco">
+   <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Brownie">
+    <img src="sabores-ddl/brownie.png" alt="Brownie">
+     <span></span>
+
+</label> 
+<label><input type="checkbox"class="sabor" value="Cabsha">
+    <img src="sabores-ddl/cabsha.png" alt="Cabsha">
+     <span></span>
+
+</label>
+<label><input type="checkbox" class="sabor"value="Chocotorta">
+    <img src="sabores-ddl/chocotorta.png" alt="Chocotorta">
+     <span></span>
+
+</label> 
+<label><input type="checkbox"class="sabor" value="Clásico">
+    <img src="sabores-ddl/ddlclasico.png" alt="Clasico">
+     <span></span>
+
+</label>
+<label><input type="checkbox" class="sabor"value="Con Nuez">
+    <img src="sabores-ddl/con nuez.png" alt="Con Nuez">
+     <span></span>
+
+</label>
+<label><input type="checkbox" class="sabor"value="Balcarce Postre Duomo">
+    <img src="sabores-ddl/duomo.png" alt="Balcarce Postre Duomo">
+     <span></span>
+
+</label>
+<label><input type="checkbox" class="sabor"value="Flan Casero">
+    <img src="sabores-ddl/flan casero.png" alt="Flan Casero">
+     <span></span>
+
+</label>
+<label><input type="checkbox" class="sabor"value="Granizado DDL">
+    <img src="sabores-ddl/granizadoddl.png" alt="Granizado DDL">
+     <span></span>
+
+</label> 
+<label><input type="checkbox"class="sabor" value="La Escaloneta">
+    <img src="sabores-ddl/escaloneta.png" alt="La Escaloneta">
+     <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Serenito">
+    <img src="sabores-ddl/serenito.png" alt="Serenito">
+     <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Súper DDL">
+    <img src="sabores-ddl/super.png" alt="Super DDL">
+     <span></span>
+
+</label>
+</div>
+ </div>
+<div class="bloque">
+<h3>Sabores Especiales</h3>
+<div class="Gustos"> <label>
+<input type="checkbox" value="Chessecake de Pistacho">
+<img src="sabores-especiales/chessecake de pistacho.png" alt="Chessecake de Pistacho">
+ <span></span>
+</label>
+<label><input type="checkbox"class="sabor" value="Chocolate Dubai ">
+  <img src="sabores-especiales/dubai.png" alt="Chocolate Dubai">
+   <span></span>
+
+</label> 
+<label><input type="checkbox"class="sabor" value="CHocolate Dubai Blanco">
+  <img src="sabores-especiales/dubai blanco.png" alt="Chocolate Dubai Blanco">
+   <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Pistaccio">
+  <img src="sabores-especiales/pistacho.png" alt="Pistaccio">
+   <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Sambayon con Almendras">
+  <img src="sabores-especiales/sambayon con almendras.png" alt="Sambayon con Almendras">
+   <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Sambayano con Cerezas">
+  <img src="sabores-especiales/sambayon con cerezas.png" alt="Sambayon con Cerezas">
+   <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Sambayon Super">
+  <img src="sabores-especiales/sambayon super.png" alt="Sambayon Super">
+   <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Sambayon Triple Chocolate">
+  <img src="sabores-especiales/sambayon triple.png" alt="Sambayon Triple Chocolate">
+   <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Tiramisu Italiano">
+  <img src="sabores-especiales/tiramisu.png" alt="Tiramisu Italiano">
+   <span></span>
+
+</label>
+<label><input type="checkbox"class="sabor" value="Torta Chaja">
+  <img src="sabores-especiales/torta chaja.png" alt="Torta Chaja">
+   <span></span>
+
+</label> 
+<label><input type="checkbox"class="sabor" value="Torta Galesa">
+  <img src="sabores-especiales/torta galesa.png" alt="Torta Galesa">
+   <span></span>
+
+</label>
+<label><input type="checkbox" class="sabor"value="Torta Selva Negra">
+  <img src="sabores-especiales/torta selva negra.png" alt="Torta Selva Negra">
+   <span></span>
+  
+</label>
+</div>
+</div>
+ <div class="bloque"> 
+<h3>Sabores Frutales a la crema</h3> 
+<div class="Gustos"> <label>
+<input type="checkbox" class="sabor" value="Anana">
+<img src="frutales-crema/ananacrema.png" alt="Anana">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Arandanos">
+  <img src="frutales-crema/arandanoscrema.png" alt="Arandanos">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Banana">
+  <img src="frutales-crema/bananacrema.png" alt="Banana">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Banana Split">
+  <img src="frutales-crema/split.png" alt="Banana Split">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Cereza">
+  <img src="frutales-crema/cerezacrema.png" alt="cereza">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Coco">
+  <img src="frutales-crema/cococrema.png" alt="Coco">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Frutilla">
+<img src="frutales-crema/frutillacrema.png" alt="Frutilla">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Frutos Rojos">
+<img src="frutales-crema/frutosrojos.png" alt="Frutos Rojos">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Higos al Cognac">
+  <img src="frutales-crema/higoscrema.png" alt="Higos al Cognac">
+
+</label>
+<label><input type="checkbox"class="sabor" value="Kinotos al Whisky">
+  <img src="frutales-crema/kinotoscrema.png" alt="Kinotos al Whisky">
+
+</label>
+<label><input type="checkbox"class="sabor" value="limon">
+  <img src="frutales-crema/limoncrema.png" alt="limon">
+
+</label>
+<label><input type="checkbox" class="sabor"value="Maracuya">
+  <img src="frutales-crema/maracuyacrema.png" alt="Maracuya">
+
+</label>
+</div>
+</div>
+ <div class="bloque">
+<h3>Sabores Frutales al Agua</h3>
+<div class="Gustos"> 
+<label><input type="checkbox"class="sabor" value="Anana">
+<img src="frutales-agua/ananaagua.png" alt="Anana">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Durazno">
+  <img src="frutales-agua/duraznoagua.png" alt="Durazno">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Frambuesa">
+  <img src="frutales-agua/frambuesaagua.png" alt="Frambuesa">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Frutilla">
+  <img src="frutales-agua/frutillaagua.png" alt="Frutilla">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Limon">
+  <img src="frutales-agua/limonagua.png" alt="Limon">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Manzana Verde con Caramelo"
+  ><img src="frutales-agua/manzanacaramelo.png" alt="Manzana Verde con Caramelo">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Multifruta">
+  <img src="frutales-agua/multifruta.png" alt="Multifruta">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Melon">
+  <img src="frutales-agua/melonagua.png" alt="Melon">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Naranja">
+  <img src="frutales-agua/naranjaagua.png" alt="Naranja">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Maracuya y Papaya">
+  <img src="frutales-agua/maracuyapapaya.png" alt="Maracuya y Papaya">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Pomelo Rosado">
+  <img src="frutales-agua/pomelorosado.png" alt="Pomelo Rosado">
+
+
+</label>
+<label><input type="checkbox"class="sabor" value="Sandia">
+  <img src="frutales-agua/sandiaagua.png" alt="Sandia">
+
+
+</label>
+</div>
+</div>
+<div class="bloque">
+<h3>Sabores Chocolate</h3>
+<div class="Gustos"> <label>
+
+      <input type="checkbox" class="sabor" value="Amargo">
+      <img src="sabores-chocolate/amargo.png" alt="Amargo">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Chocolate Bariloche">
+      <img src="sabores-chocolate/bariloche.png" alt="Chocolate Bariloche">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Blanco">
+      <img src="sabores-chocolate/blanco.png" alt="Blanco">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Block">
+      <img src="sabores-chocolate/block.png" alt="Block">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Cadbury tres sueños">
+      <img src="sabores-chocolate/cadbury tres sueños.png" alt="Cadbury tres sueños">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Clasico">
+      <img src="sabores-chocolate/clasico.png" alt="Clasico">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Con Almendras">
+      <img src="sabores-chocolate/con almendras.png" alt="Con Almendras">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Con Pasas al Rhum">
+      <img src="sabores-chocolate/con pasas al rhum.png" alt="Con Pasas al Rhum">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Dos Corazones">
+      <img src="sabores-chocolate/dos corazones.png" alt="Dos Corazones">
+      <span></span>
+    </label>
+
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Ferrero Rocher">
+      <img src="sabores-chocolate/ferrero rocher.png" alt="Ferrero Rocher">
+      <span></span>
+    </label>
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Kinder">
+      <img src="sabores-chocolate/kinder.png" alt="Kinder">
+      <span></span>
+    </label>
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="  Marroc">
+      <img src="sabores-chocolate/marroc.png" alt="Marroc">
+      <span></span>
+    </label>
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Nutella">
+      <img src="sabores-chocolate/nutella.png" alt="Nutella">
+      <span></span>
+    </label>
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Rafaello">
+      <img src="sabores-chocolate/rafaello.png" alt="Rafaello">
+      <span></span>
+    </label>
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Tita">
+      <img src="sabores-chocolate/tita.png" alt="Tita">
+      <span></span>
+    </label>
+    <label class="sabor-card">
+      <input type="checkbox" class="sabor" value="Tofi">
+      <img src="sabores-chocolate/tofi.png" alt="Tofi">
+      <span></span>
+    </label>
+</div>
+</div>
+
+
+<div class="bloque">
+<h3>Sabores Crema</h3>
+<div class="Gustos"> <label>
+
+  <input type="checkbox"class="sabor" value="Almendrado">
+  <img src="sabores-crema/almendrado.png" alt="Almendrado">
+  <span></span>
+  </label> 
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Americana">
+  <img src="sabores-crema/americana.png" alt="Americana">
+  <span></span>
+</label>
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Cafe con Leche">
+    <img src="sabores-crema/cafe con leche.png" alt="cafe con Leche">
+  <span></span>
+
+ 
+</label>
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Crema del Cielo">
+    <img src="sabores-crema/crema del cielo.png" alt="Crema del Cielo">
+  <span></span>
+</label>
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Granizado">
+    <img src="sabores-crema/granizado.png" alt="Americana">
+  <span></span>
+  </label> 
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Rocklets">
+    <img src="sabores-crema/rocklets.png" alt="Americana">
+  <span></span>
+</label>
+<label>
+  <input type="checkbox"class="sabor" value="Menta Granizada">
+  <img src="sabores-crema/menta granizada.png" alt="Americana">
+  <span></span>
+</label>
+<label>
+  <input type="checkbox"class="sabor" value="Oreo a la Crema">
+  <img src="sabores-crema/oreo a la crema.png" alt="Americana">
+  <span></span>
+</label>
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Oreo a la Vainilla">
+    <img src="sabores-crema/oreo a la vainilla.png" alt="Americana">
+  <span></span>
+  </label>
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Rusa">
+ <img src="sabores-crema/rusa.png" alt="Americana">
+  <span></span>
+  </label>
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Tramontana">
+  <img src="sabores-crema/tramontana.png" alt="Americana">
+  <span></span>
+</label>
+<label class="sabor-card">
+  <input type="checkbox"class="sabor" value="Vainilla">
+  <img src="sabores-crema/vainilla.png" alt="Americana">
+  <span></span>
+  </label>
+ </div>
+ </div>
+<!-- (el resto igual, solo agregar class="sabor" a TODOS, como ya hiciste) -->
+  <!-- ================= DATOS CLIENTE ================= -->
+  <section class="bloque datos-pedido">
+    <h3>Datos del pedido</h3>
+
+    <input type="text" placeholder="Nombre y apellido">
+    <input type="text" placeholder="Dirección y altura">
+
+    <select>
+      <option>Efectivo</option>
+      <option>Transferencia</option>
+    </select>
+
+    <textarea placeholder="Observaciones (opcional)"></textarea>
+  </section>
+
+  <div id="resumen"></div>
+  <button id="btnWhatsapp">Enviar pedido por WhatsApp</button>
+
+<!-- ================= PANEL ADMIN (OCULTO) ================= -->
+<section id="admin-panel">
+  <h3>⚙️ Panel de Sabores</h3>
+  <p>(Doble click en el título para mostrar / ocultar)</p>
+
+  <div id="admin-sabores"></div>
+</section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
