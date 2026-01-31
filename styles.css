@@ -228,36 +228,41 @@ body {
   cursor: pointer;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ======================================================
+   RESPONSIVE
+====================================================== */
 
-@media (max-width: 900px) {
-  .Gustos {
-    grid-template-columns: repeat(2,1fr);
+/* Tablets */
+@media(max-width:900px){
+  .gustos{
+    grid-template-columns:repeat(3,1fr);
   }
 }
 
-@media (max-width: 600px) {
+/* CELULAR */
+@media(max-width:600px){
 
-  body {
-    background-size: 300px auto;
+  .datos-pedido{
+    grid-template-columns:1fr;
   }
 
-  .datos-pedido {
-    grid-template-columns: 1fr;
+  /* 🔥 2 COLUMNAS DE SABORES */
+  .gustos{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .Gustos {
-    grid-template-columns: 1fr;
+  .gustos img{
+    height:85px;
   }
 
-  .Gustos label {
-    height: 60px;
-    font-size: 13px;
+  .producto label img{
+    height:80px;
   }
 
-  .producto select {
-    font-size: 16px;
+  .cantidad{
+    width:60px;
   }
+
   /* ================= TARJETA TAMAÑO TIPO SABOR ================= */
 
 /* Contenedor de cada tamaño */
@@ -577,17 +582,5 @@ body {
 
   .gustos img{
     height: 80px;
-  }
-}
-/* ===== FIX MOBILE 2 COLUMNAS SABORES ===== */
-
-@media screen and (max-width: 600px){
-  .gustos{
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  .gustos img{
-    height: 85px !important;
   }
 }
