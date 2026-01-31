@@ -579,3 +579,15 @@ body {
     height: 80px;
   }
 }
+/* ===== FIX MOBILE 2 COLUMNAS SABORES ===== */
+
+@media screen and (max-width: 600px){
+  .gustos{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .gustos img{
+    height: 85px !important;
+  }
+}
