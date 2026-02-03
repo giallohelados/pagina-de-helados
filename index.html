@@ -655,17 +655,25 @@
   <div id="resumen"></div>
   <button id="btnWhatsapp">Enviar pedido por WhatsApp</button>
 
-<!-- ================= PANEL ADMIN (OCULTO) ================= -->
-<section id="admin-panel">
-  <h3>⚙️ Panel de Sabores</h3>
-  <p>(Doble click en el título para mostrar / ocultar)</p>
+  <button onclick="abrirPanelSabores()">Panel de Sabores</button>
 
+<!-- ================= PANEL ADMIN (OCULTO) ================= -->
+<section id="admin-panel" style="display:none;">
+  <h3>⚙️ Panel de Sabores</h3>
   <div id="admin-sabores"></div>
 </section>
 
-
   <script src="script.js"></script>
+  <script>
+function abrirPanelSabores(){
+  const clave = prompt("Ingresar contraseña:");
+
+  if(clave === "giallo2026"){
+    document.getElementById("admin-panel").style.display = "block";
+  }else{
+    alert("Contraseña incorrecta");
+  }
+}
+</script>
 </body>
 </html>
-
-
